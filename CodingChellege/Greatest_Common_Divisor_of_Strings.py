@@ -10,15 +10,18 @@ def gcdOfStrings(str1:str, str2:str) -> str:
     
     def gcd(a: int, b: int) -> int:
         while b:
-            a, b = b, a % b
-            print(a)
-            print(b)
+            a = b
+            b = a % b
+            #print(a)
+            #print(b)
+        
         return a
     
     gcd_length =gcd(len(str1), len(str2))
     
+    print("gcd_length value:", gcd_length)
     return str1[:gcd_length]
 
-str1 = "ABC"
-str2 = "ABCABC"
+str1 = "ABCABC"
+str2 = "ABC"
 print(gcdOfStrings(str1, str2))
